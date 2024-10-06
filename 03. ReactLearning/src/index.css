@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom styles here */
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: #242424;
+    background-color: rgba(255, 255, 255, 0.87);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+body {
+    margin: 0;
+    place-items: start;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.8em;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.6em;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.2em;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 0.8em;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+/* Custom button styles can go here if needed */
+/* Custom button styles */
+.btn-default {
+    @apply rounded-lg border-2 border-transparent bg-gray-800 text-white font-semibold py-2 px-4 transition duration-300 ease-in-out transform hover:bg-blue-600 hover:border-blue-500 hover:translate-y-[-2px] focus:outline-none focus:ring-4 focus:ring-blue-300;
+}
+
+.btn-colorful {
+    @apply rounded-lg border-none bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-2 px-4 transition duration-300 ease-in-out transform hover:bg-gradient-to-l hover:from-blue-500 hover:to-purple-500 hover:translate-y-[-2px] focus:outline-none focus:ring-4 focus:ring-purple-300;
+}
