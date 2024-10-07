@@ -72,3 +72,7 @@ h5 {
 .btn-colorful {
     @apply rounded-lg border-none bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-2 px-4 transition duration-300 ease-in-out transform hover:bg-gradient-to-l hover:from-blue-500 hover:to-purple-500 hover:translate-y-[-2px] focus:outline-none focus:ring-4 focus:ring-purple-300;
 }
+
+.btn-IncDec {
+    @apply text-black text-xl
+}
