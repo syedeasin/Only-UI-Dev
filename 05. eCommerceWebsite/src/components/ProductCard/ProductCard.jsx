@@ -3,7 +3,7 @@ import product1 from '../../assets/product1.jpg';
 import { FaRegHeart } from "react-icons/fa6";
 import { GrCart } from "react-icons/gr";
 
-const ProductCard = () => {
+const ProductCard = ({name,price,imageUrl}) => {
     const [cardHovered, setCardHovered] = useState(false);
 
     return (
@@ -14,7 +14,7 @@ const ProductCard = () => {
         >
             <div className={`p-4 transition-transform duration-300 transform`}>
                 <div className="card-wrapper">
-                    <img src={product1} alt="product one bag" className="rounded-xl" />
+                    <img src={imageUrl} alt="product one bag" className="rounded-xl" />
 
                     {/* Product Actions */}
                     <div className={`product-actions flex items-center w-full justify-center gap-3 -mt-14 mb-10 transition-transform duration-300 ${cardHovered ? '-translate-y-0 opacity-100 visible' : 'translate-y-full opacity-0 invisible'}`}>
@@ -26,9 +26,9 @@ const ProductCard = () => {
                         </div>
                     </div>
 
-                    <h3 className="text-lg font-bold text-center">Black Bottle Small</h3>
+                    <h3 className="text-lg font-bold text-center">{name}</h3>
                     <p className="text-[16px] font-semibold text-center mt-1 text-[#E46319] pb-3">
-                        $32.00 <span className="text-gray-500 line-through">$36.00</span>
+                        {price} <span className="text-gray-500 line-through">$36.00</span>
                     </p>
                 </div>
             </div>

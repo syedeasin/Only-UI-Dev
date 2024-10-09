@@ -1,21 +1,30 @@
-// src/App.jsx
-import React from 'react';
-import { CartProvider } from './context/CartContext'; // Ensure correct import path
-import ProductPage from './pages/ProductPage';
 import ProductCard from "./components/ProductCard/ProductCard.jsx";
+import { dummyProducts } from "./services/productService.js";
 
 const App = () => {
+
+
+    if (dummyProducts === null) {
+        return <p>Loading...</p>; // Loading state
+    }
+
+    if (dummyProducts.length === 0) {
+        return <p>Product not found.</p>; // No products found
+    }
+
     return (
-        // <CartProvider>
-        //     <ProductPage productId="1"/>
-        // </CartProvider>
         <div className="bg-white h-screen">
-            <div className="container mx-40 py-32">
-                <ProductCard />
+            <div className="container mx-40 py-32 w-full flex flex-wrap">
+                {dummyProducts.map(item => (
+                    <ProductCard
+                        key={item.id}
+                        name={item.name}
+                        price={item.price}
+                        imageUrl={item.imageUrl}
+                    />
+                ))}
             </div>
-
         </div>
-
     );
 };
 
