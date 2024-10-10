@@ -7,10 +7,13 @@
   </head>
   <body>
     <h1>Hello Easin</h1>
-    <p>How Many Clicks: <span id="click"></span></p>
-    <button onclick="setClicks()">See Current Time</button>
+    <form action="validateForm()">
+      <input type="text" id="name" name="name" placeholder="Enter your name" onchange="checkEmail()">
+      <input type="submit">
+    </form>
 
     <!-- Scripts  -->
-    <script src="index.js"></script>
+    <script src="index.js">
+    </script>
   </body>
 </html>
