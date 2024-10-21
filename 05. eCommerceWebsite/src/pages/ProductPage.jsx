@@ -1,42 +1,26 @@
-// src/pages/ProductPage.jsx
-import React, { useContext, useEffect, useState } from 'react';
-import { fetchProductData } from '../services/productService';
-import CartContext from '../context/CartContext';
+import { dummyProducts } from "../services/productService";
 import ProductCard from "../components/ProductCard/ProductCard.jsx";
 
-const ProductPage = ({ productId }) => {
-    const { cartDispatch } = useContext(CartContext); // Check that CartContext provides cartDispatch
-    const [product, setProduct] = useState(null);
-
-    useEffect(() => {
-        const getProduct = async () => {
-            const fetchedProduct = await fetchProductData(productId);
-            setProduct(fetchedProduct);
-        };
-
-        getProduct();
-    }, [productId]);
-
-    if (!product) return <div>Loading...</div>;
-
-    const handleAddToCart = () => {
-        if (cartDispatch) {
-            cartDispatch({ type: 'ADD_TO_CART', payload: product });
-        } else {
-            console.error("cartDispatch function is not available in CartContext");
-        }
-    };
-
-    return (
-        <div>
-            {/*<h1>{product.name}</h1>*/}
-            {/*<p>{product.description}</p>*/}
-            {/*<p>Price: ${product.price.toFixed(2)}</p>*/}
-            {/*<img src={product.imageUrl} alt={product.name} width="200" />*/}
-            {/*<button onClick={handleAddToCart}>Add to Cart</button>*/}
-            <ProductCard/>
+const ProductPage = () => {
+  return (
+    <div>
+      <div className="bg-white h-screen pt-32">
+        <h2 className="text-center mt-5 font-bold text-5xl tracking-tight">
+          Our Featured Products
+        </h2>
+        <div className="container mx-40 pt-16 pb-32 w-full flex flex-wrap">
+          {dummyProducts.map((item) => (
+            <ProductCard
+              key={item.id}
+              name={item.name}
+              price={item.price}
+              imageUrl={item.imageUrl}
+            />
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ProductPage;
