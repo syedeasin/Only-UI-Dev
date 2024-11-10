@@ -1,14 +1,5 @@
-function validateForm() {
-  const name = document.getElementById('name').value;
-  if(!name) {
-    alert('Name is required!');
-    return false;
-  }
-  return true;
-}
-function checkEmail() {
-  const email = document.getElementById('email').value;
-  if (!email.includes('@')) {
-    alert('Please enter a valid email address');
-  }
-}git
+// const heading = document.getElementById("heading2");
+// heading.innerText = 'This is heading';
+
+document.write("Nope, This is Easin\'s Document");
+console.log(document);
