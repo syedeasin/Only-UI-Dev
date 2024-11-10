@@ -11,4 +11,4 @@ function checkEmail() {
   if (!email.includes('@')) {
     alert('Please enter a valid email address');
   }
-}
+}git
